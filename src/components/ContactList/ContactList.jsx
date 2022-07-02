@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Contact from '../Contact/Contact';
 import { deleteContact } from 'redux/actions';
