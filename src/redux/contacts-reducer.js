@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
 
-const items = (state = [], action) => {
-  switch (action.type) {
+const items = (state = [], { type, payload }) => {
+  switch (type) {
     case 'CONTACT/ADD':
-      return [...state, action.payload];
+      return [...state, payload];
+    case 'CONTACT/DELETE':
+      return state.filter(({ id }) => id !== payload);
     default:
       return state;
   }

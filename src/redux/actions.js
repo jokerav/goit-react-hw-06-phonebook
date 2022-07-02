@@ -8,4 +8,8 @@ const addContact = contact => ({
     number: contact.number,
   },
 });
-export { addContact };
+const deleteContact = id => ({
+  type: 'CONTACT/DELETE',
+  payload: id,
+});
+export { addContact, deleteContact };
