@@ -1,7 +1,7 @@
 // import { nanoid } from 'nanoid';
 import ContactForm from './ContactsForm/ContactForm';
 import ContactList from './ContactList/ContactList';
-// import Filter from './Filter/Filter';
+import Filter from './Filter/Filter';
 // import { useState } from 'react';
 // import { useEffect } from 'react';
 export const App = () => {
@@ -64,7 +64,9 @@ export const App = () => {
       <ContactForm
       // addContact={addContact}
       />
-      {/* <Filter value={filter} onChange={onFilterChange} /> */}
+      <Filter
+      // value={filter} onChange={onFilterChange}
+      />
       <h2>Contacts</h2>
       <ContactList
       // contacts={visibleContacts}

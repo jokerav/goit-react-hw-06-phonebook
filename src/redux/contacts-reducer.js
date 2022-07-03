@@ -10,7 +10,12 @@ const items = (state = [], { type, payload }) => {
       return state;
   }
 };
-const filter = (state = '', action) => {
-  return state;
+const filter = (state = '', { type, payload }) => {
+  switch (type) {
+    case 'FILTER/CHANGE':
+      return payload;
+    default:
+      return state;
+  }
 };
 export default combineReducers({ items, filter });

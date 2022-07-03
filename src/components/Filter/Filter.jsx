@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { changeFilter } from '../../redux/actions';
 const Filter = ({ value, onChange }) => (
   <label>
     Find contacts by name
@@ -12,8 +14,14 @@ const Filter = ({ value, onChange }) => (
     />
   </label>
 );
-
-export default Filter;
+const mapStateToProps = state => ({
+  value: state.filter,
+});
+const mapDispatchToProps = dispatch => ({
+  onChange: e => dispatch(changeFilter(e.target.value)),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Filter);
+// export default Filter;
 Filter.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,

@@ -12,4 +12,5 @@ const deleteContact = id => ({
   type: 'CONTACT/DELETE',
   payload: id,
 });
-export { addContact, deleteContact };
+const changeFilter = text => ({ type: 'FILTER/CHANGE', payload: text });
+export { addContact, deleteContact, changeFilter };
