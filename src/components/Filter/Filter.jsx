@@ -1,10 +1,11 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 // import { connect } from 'react-redux';
 import { changeFilter } from '../../redux/actions';
 import { useSelector, useDispatch } from 'react-redux';
+import { getfilter } from 'redux/selectors';
 
 export default function Filter() {
-  const value = useSelector(state => state.contacts.filter);
+  const value = useSelector(getfilter);
   const dispatch = useDispatch();
   return (
     <label>
@@ -28,7 +29,7 @@ export default function Filter() {
 // });
 // export default connect(mapDispatchToProps)(Filter);
 
-Filter.propTypes = {
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-};
+// Filter.propTypes = {
+//   value: PropTypes.string.isRequired,
+//   onChange: PropTypes.func.isRequired,
+// };
