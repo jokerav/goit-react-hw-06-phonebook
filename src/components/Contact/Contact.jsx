@@ -18,7 +18,7 @@ const Contact = ({ contact }) => {
 export default Contact;
 Contact.propTypes = {
   contact: PropTypes.shape({
-    id: PropTypes.string,
+    id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     number: PropTypes.string.isRequired,
   }).isRequired,
