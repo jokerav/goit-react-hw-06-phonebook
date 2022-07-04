@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { changeFilter } from '../../redux/actions';
 import { useSelector, useDispatch } from 'react-redux';
 import { getfilter } from 'redux/selectors';
@@ -20,9 +19,3 @@ export default function Filter() {
     </label>
   );
 }
-
-// здесь пришлось убрать isRequired, консоль ругается
-Filter.propTypes = {
-  value: PropTypes.string,
-  onChange: PropTypes.func,
-};

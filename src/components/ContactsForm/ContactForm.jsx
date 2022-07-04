@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { addContact } from 'redux/actions';
@@ -34,17 +33,13 @@ const ContactForm = () => {
   };
   const onSubmit = e => {
     e.preventDefault();
-    //мне не нравится реализация проверки имён на уникальность
-    // я "выдрал" имя из события, а можно это слелать по другому?
-    const name = e.target[0].defaultValue;
-
     if (!isNameInPhonebook(name)) {
       dispatch(addContact({ name, number }));
+      setName('');
+      setNumber('');
     } else {
       alert(`${name} is already in contacts`);
     }
-    setName('');
-    setNumber('');
   };
 
   return (
@@ -78,6 +73,3 @@ const ContactForm = () => {
   );
 };
 export default ContactForm;
-ContactForm.propTypes = {
-  addContact: PropTypes.func,
-};
