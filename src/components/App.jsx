@@ -1,4 +1,3 @@
-// import { nanoid } from 'nanoid';
 import ContactForm from './ContactsForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
@@ -61,17 +60,10 @@ export const App = () => {
       }}
     >
       <h1>Phonebook</h1>
-      <ContactForm
-      // addContact={addContact}
-      />
-      <Filter
-      // value={filter} onChange={onFilterChange}
-      />
+      <ContactForm />
+      <Filter />
       <h2>Contacts</h2>
-      <ContactList
-      // contacts={visibleContacts}
-      // onDelete={deleteContact}
-      />
+      <ContactList />
     </div>
   );
 };
