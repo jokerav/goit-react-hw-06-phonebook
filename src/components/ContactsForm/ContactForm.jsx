@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { addContact } from 'redux/actions';
+// import { getContacts } from 'redux/selectors';
 
 const ContactForm = ({ addContact }) => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
+  // const contacts = useSelector(getContacts);
 
   const onChange = e => {
     const { name, value } = e.currentTarget;
@@ -20,9 +22,23 @@ const ContactForm = ({ addContact }) => {
         return;
     }
   };
+  // const isNameInPhonebook = name => {
+  //   const nameInLowerCase = name.toLowerCase();
+  //   for (const contact of contacts) {
+  //     if (contact.name.toLowerCase() === nameInLowerCase) {
+  //       return true;
+  //     }
+  //   }
+  //   return false;
+  // };
   const onSubmit = e => {
     e.preventDefault();
+    // if (!isNameInPhonebook({ name })) {
     addContact({ name, number });
+    // } else {
+    //   alert(`${name} is already in contacts`);
+    // }
+
     setName('');
     setNumber('');
   };
@@ -57,6 +73,7 @@ const ContactForm = ({ addContact }) => {
     </form>
   );
 };
+
 const mapDispatchToProps = dispatch => ({
   addContact: contact => dispatch(addContact(contact)),
 });
