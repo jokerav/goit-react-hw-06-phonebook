@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { useState } from 'react';
-
 import { addContact } from 'redux/actions';
 
 const ContactForm = ({ addContact }) => {
@@ -61,7 +60,6 @@ const ContactForm = ({ addContact }) => {
 const mapDispatchToProps = dispatch => ({
   addContact: contact => dispatch(addContact(contact)),
 });
-
 export default connect(null, mapDispatchToProps)(ContactForm);
 
 ContactForm.propTypes = {

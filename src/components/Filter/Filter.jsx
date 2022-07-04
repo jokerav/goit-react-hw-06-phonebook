@@ -1,5 +1,4 @@
-// import PropTypes from 'prop-types';
-// import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { changeFilter } from '../../redux/actions';
 import { useSelector, useDispatch } from 'react-redux';
 import { getfilter } from 'redux/selectors';
@@ -21,15 +20,9 @@ export default function Filter() {
     </label>
   );
 }
-// const mapStateToProps = state => ({
-//   value: state.filter,
-// });
-// const mapDispatchToProps = dispatch => ({
-//   onChange: e => dispatch(changeFilter(e.target.value)),
-// });
-// export default connect(mapDispatchToProps)(Filter);
 
-// Filter.propTypes = {
-//   value: PropTypes.string.isRequired,
-//   onChange: PropTypes.func.isRequired,
-// };
+// здесь пришлось убрать isRequired, консоль ругается
+Filter.propTypes = {
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+};
