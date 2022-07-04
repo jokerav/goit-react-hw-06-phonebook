@@ -34,6 +34,8 @@ const ContactForm = () => {
   };
   const onSubmit = e => {
     e.preventDefault();
+    //мне не нравится реализация проверки имён на уникальность
+    // я "выдрал" имя из события, а можно это слелать по другому?
     const name = e.target[0].defaultValue;
 
     if (!isNameInPhonebook(name)) {
@@ -41,7 +43,6 @@ const ContactForm = () => {
     } else {
       alert(`${name} is already in contacts`);
     }
-
     setName('');
     setNumber('');
   };
@@ -78,5 +79,5 @@ const ContactForm = () => {
 };
 export default ContactForm;
 ContactForm.propTypes = {
-  addContact: PropTypes.func.isRequired,
+  addContact: PropTypes.func,
 };
