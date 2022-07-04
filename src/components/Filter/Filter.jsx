@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { changeFilter } from '../../redux/actions';
 const Filter = ({ value, onChange }) => (
@@ -21,8 +21,8 @@ const mapDispatchToProps = dispatch => ({
   onChange: e => dispatch(changeFilter(e.target.value)),
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);
-// export default Filter;
-// Filter.propTypes = {
-//   value: PropTypes.string.isRequired,
-//   onChange: PropTypes.func.isRequired,
-// };
+
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+};
